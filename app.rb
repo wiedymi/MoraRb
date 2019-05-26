@@ -17,6 +17,8 @@ def level(exp)
         if($exl == 100)
             $level += 1
             puts "Yeahh! Level up!"
+            $exp = 0
+            $exl = 0
         else
             $exl = $exl - 100
             $exp = $exl
@@ -68,7 +70,7 @@ def CreateAMob()
         if(attack.downcase == "yes")
             damage = $level + rand(5)
             mob = mob - damage
-            puts "The Boss -#{damage}hp"
+            puts "The Mob -#{damage}hp"
             puts "=_+"
             puts " |---"
             puts "/|"
