@@ -6,8 +6,6 @@ $killedmob = 0
 puts "What's your name? "
 $nickname = gets.chomp
 
-
-
 def level(exp)
     if($exl >= 100)
         if($exl == 100)
@@ -27,6 +25,7 @@ def level(exp)
         puts "3"
     end
 end
+
 def showstat()
     puts "Welcome, #{$nickname}!"
     puts "Your level is #{$level}!"
@@ -34,6 +33,7 @@ def showstat()
 end
 
 showstat()
+
 def CreateABoss()
     mob = 100
     puts "The Boss"
@@ -67,7 +67,6 @@ def CreateAMob()
     mob = 10
     puts "The Mob"
     puts "=_+"
- 
     puts "HP: 10"
     until mob <= 0  do
         puts "Do you want to attack? Yes/No"
