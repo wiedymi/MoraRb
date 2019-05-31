@@ -4,9 +4,10 @@ $exl = 0
 $killedmob = 0
 $killedboss = 0
 $weapon = 0
-$hp = 1
+$hp = 100
 $armor = 0
-
+$mex = 100
+$mhp = 100
 puts "What's your name? "
 $nickname = gets.chomp
 
@@ -16,11 +17,19 @@ def level(exp)
             $level += 1
 			puts ""
             puts "Yeahh! Level up!"
+            $hp = 100 + 10 * $level
+            $mhp = $hp
+            $exl = 100 + 10 ** $level
+            $mex = $exl
             $exp = 0
             $exl = 0
             puts "2"
         else
             $level += 1
+            $hp = 100 + 10 * $level
+            $mhp = $hp
+            puts ""
+            puts "Yeahh! Level up!"
             $exl = $exl - 100
             $exp = $exl
             puts "1"
@@ -35,8 +44,8 @@ def showstat()
 	puts ""
     puts "Welcome, #{$nickname}!"
     puts "Your level is #{$level}!"
-    puts "Exp #{$exl}/100!"
-	puts "HP #{$hp}/100!"
+    puts "Exp #{$exl}/#{$mex}!"
+	puts "HP #{$hp}/#{$mhp}!"
 	puts "Weapon damage: #{$weapon}"
 	puts "Armor: #{$armor}"
 end
